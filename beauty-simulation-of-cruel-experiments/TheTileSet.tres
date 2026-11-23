@@ -1,0 +1,59 @@
+[gd_resource type="TileSet" format=3 uid="uid://cb8142x17j1jl"]
+
+[ext_resource type="Texture2D" uid="uid://6s2inmbb0s0n" path="res://Textures/Thetiles.png" id="1_4y6s0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r38k5"]
+texture = ExtResource("1_4y6s0")
+texture_region_size = Vector2i(256, 256)
+1:0/next_alternative_id = 3
+1:0/0 = 0
+2:0/0 = 0
+0:1/next_alternative_id = 2
+0:1/0 = 0
+0:1/1 = 1
+0:1/1/modulate = Color(1, 0, 0, 1)
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/next_alternative_id = 5
+1:2/0 = 0
+1:2/1 = 1
+1:2/1/flip_h = true
+1:2/1/transpose = true
+1:2/2 = 2
+1:2/2/flip_v = true
+1:2/3 = 3
+1:2/3/transpose = true
+2:2/next_alternative_id = 4
+2:2/0 = 0
+2:2/1 = 1
+2:2/1/flip_h = true
+2:2/1/transpose = true
+2:2/2 = 2
+2:2/2/flip_v = true
+2:2/3 = 3
+2:2/3/transpose = true
+0:3/next_alternative_id = 5
+0:3/0 = 0
+0:3/1 = 1
+0:3/1/flip_h = true
+0:3/1/transpose = true
+0:3/2 = 2
+0:3/2/flip_v = true
+0:3/3 = 3
+0:3/3/transpose = true
+1:3/next_alternative_id = 4
+1:3/0 = 0
+1:3/1 = 1
+1:3/1/flip_h = true
+1:3/1/transpose = true
+1:3/2 = 2
+1:3/2/flip_v = true
+1:3/3 = 3
+1:3/3/transpose = true
+2:3/0 = 0
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(256, 256)
+sources/1 = SubResource("TileSetAtlasSource_r38k5")
