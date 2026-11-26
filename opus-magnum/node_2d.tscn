@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ctm40edjutyy8"]
+
+[ext_resource type="Shader" uid="uid://ci662hsgy30kr" path="res://dreamer.gdshader" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://r63rut2r7drq" path="res://dreaming.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://pl2obt4pxv5a" path="res://RGBcurve.tres" id="2_kdubu"]
+[ext_resource type="FontFile" uid="uid://debmfsblqbu8c" path="res://SONORM__.ttf" id="3_epypp"]
+[ext_resource type="AudioStream" uid="uid://d2f1pa5k24vns" path="res://Lost Paino.wav" id="5_kdubu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtcfe"]
+shader = ExtResource("1_0e48y")
+shader_parameter/Equation = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/maximum = 0.0
+shader_parameter/minimum = 0.0
+shader_parameter/zoom = 1.0
+shader_parameter/campos = Vector2(0, 0)
+shader_parameter/mousepos = Vector2(0, 0)
+shader_parameter/mdown = 0.0
+shader_parameter/rng = 0.0
+shader_parameter/colour = false
+shader_parameter/argeebee = ExtResource("2_kdubu")
+
+[node name="ColorRect" type="ColorRect" unique_id=1823367815]
+visibility_layer = 524288
+material = SubResource("ShaderMaterial_wtcfe")
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_wtcfe")
+
+[node name="LoadRect" type="ColorRect" parent="." unique_id=1832400615]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 650.0
+color = Color(0, 0, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1072501793]
+visible = false
+layout_mode = 0
+offset_left = 0.9999994
+offset_top = -150.0
+offset_right = 180.0
+offset_bottom = -73.0
+scale = Vector2(6.3650618, 12.798561)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_epypp")
+theme_override_font_sizes/font_size = 64
+text = "DREAMING"
+
+[node name="AmbPlayer" type="AudioStreamPlayer" parent="." unique_id=1369067220]
+volume_db = -6.335
+autoplay = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=331291973]
+stream = ExtResource("5_kdubu")
+volume_db = -23.228
+
+[node name="NotePlayer" type="AudioStreamPlayer" parent="." unique_id=657160322]
+max_polyphony = 400
+
+[node name="Timer" type="Timer" parent="." unique_id=893443693]
+wait_time = 0.5
+
+[node name="sTimer" type="Timer" parent="." unique_id=1086350205]
+wait_time = 0.05
+
+[node name="updates" type="Label" parent="." unique_id=1050738480]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 619.0
+offset_right = 43.0
+offset_bottom = 658.0
+scale = Vector2(1.0138063, 0.73166674)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_epypp")
+theme_override_font_sizes/font_size = 32
+text = "ffff"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

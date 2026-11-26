@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ctm40edjutyy8"]
+
+[ext_resource type="Shader" uid="uid://ci662hsgy30kr" path="res://dreamer.gdshader" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://r63rut2r7drq" path="res://dreaming.gd" id="1_wtcfe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtcfe"]
+shader = ExtResource("1_0e48y")
+shader_parameter/Equation = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/maximum = 0.0
+shader_parameter/minimum = 0.0
+shader_parameter/zoom = 1.0
+shader_parameter/campos = Vector2(0, 0)
+shader_parameter/mousepos = Vector2(0, 0)
+shader_parameter/mdown = 0.0
+shader_parameter/rng = 0.0
+
+[node name="ColorRect" type="ColorRect" unique_id=1823367815]
+material = SubResource("ShaderMaterial_wtcfe")
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_wtcfe")
