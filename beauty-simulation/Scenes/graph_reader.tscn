@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxunik4e3rtkf"]
+
+[node name="GraphReader" type="Line2D" unique_id=606699034]
+width = 1.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1951685651]
+custom_minimum_size = Vector2(200, 200)
+offset_left = 4.0
+offset_right = 204.0
+offset_bottom = 200.0
+scale = Vector2(0.5, 0.5)
+scroll_active = false

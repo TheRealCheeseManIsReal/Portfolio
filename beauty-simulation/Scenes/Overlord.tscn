@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bitpgjenr8uxh"]
+
+[ext_resource type="TileSet" uid="uid://cb8142x17j1jl" path="res://TheTileSet.tres" id="1_p2rhc"]
+[ext_resource type="Script" uid="uid://delmvrl5tv2rp" path="res://Scripts/overlord.gd" id="2_6t0dm"]
+[ext_resource type="Script" uid="uid://cp4d8myban6b8" path="res://Scripts/camera.gd" id="3_l4cse"]
+[ext_resource type="PackedScene" uid="uid://dt2gn1uih88fw" path="res://Scenes/TS.tscn" id="4_we3h3"]
+[ext_resource type="PackedScene" uid="uid://cxunik4e3rtkf" path="res://Scenes/graph_reader.tscn" id="5_i1w5o"]
+[ext_resource type="Script" uid="uid://dys14fbd5rnf0" path="res://Scripts/graph_reader.gd" id="6_4jubh"]
+
+[node name="World" type="TileMapLayer" unique_id=1921623788]
+scale = Vector2(0.03, 0.03)
+tile_set = ExtResource("1_p2rhc")
+script = ExtResource("2_6t0dm")
+
+[node name="Checker" type="TileMapLayer" parent="." unique_id=2095185351]
+show_behind_parent = true
+scale = Vector2(0.9999998, 0.9999998)
+tile_set = ExtResource("1_p2rhc")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=2063903899]
+show_behind_parent = true
+scale = Vector2(0.9999999, 0.9999999)
+tile_set = ExtResource("1_p2rhc")
+
+[node name="Foods" type="TileMapLayer" parent="." unique_id=1195462826]
+scale = Vector2(0.99999994, 0.99999994)
+tile_set = ExtResource("1_p2rhc")
+
+[node name="Camera" type="CharacterBody2D" parent="." unique_id=751865467]
+motion_mode = 1
+script = ExtResource("3_l4cse")
+
+[node name="Camera2D" type="Camera2D" parent="Camera" unique_id=873301666]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1101765368]
+
+[node name="TS" parent="CanvasLayer" unique_id=1783269155 instance=ExtResource("4_we3h3")]
+
+[node name="Food Graph" type="Line2D" parent="CanvasLayer" unique_id=1451165426]
+visible = false
+points = PackedVector2Array(0, 324, 0, 324)
+width = 1.0
+
+[node name="Population Graph" type="Line2D" parent="CanvasLayer" unique_id=1264136745]
+visible = false
+points = PackedVector2Array(0, 324, 0, 324)
+width = 1.0
+
+[node name="Graph Reader" parent="CanvasLayer" unique_id=606699034 instance=ExtResource("5_i1w5o")]
+visible = false
+points = PackedVector2Array(0, 0, 0, 0)
+script = ExtResource("6_4jubh")
